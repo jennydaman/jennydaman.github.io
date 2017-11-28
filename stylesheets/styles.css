@@ -278,10 +278,6 @@ footer {
 
 /* My customizations */
 
-header p.view a:hover {
-  font-weight: bold;
-}
-
 /* Adds Github-style Markdown horizontal line after h1*/
 section h1 {
   padding-bottom: 0.3em;
@@ -309,7 +305,24 @@ section p {
 
 /* hide image on mobile screens */
 @media print, screen and (max-width: 960px) {
-  .avatar-img {
+  img, .avatar-img {
     display: none;
   }
+  min-height: initial;
+}
+
+/*header div.links a:hover {
+  font-weight: bold;
+}*/
+
+header div.links img {
+  height: 36px;
+  width: 36px;
+  padding-right: 5px;
+  float: left;
+}
+
+header div.links h2 {
+  font-weight: lighter;
+  margin-left: 4px;
 }
