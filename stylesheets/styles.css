@@ -200,7 +200,7 @@ footer {
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
-@media print, screen and (max-width: 960px) {
+@media all and (max-width: 960px) {
 
   div.wrapper {
     width:auto;
@@ -236,7 +236,7 @@ footer {
   */
 }
 
-@media print, screen and (max-width: 720px) {
+@media all and (max-width: 720px) {
   body {
     word-wrap:break-word;
   }
@@ -254,7 +254,7 @@ footer {
   }
 }
 
-@media print, screen and (max-width: 480px) {
+@media all and (max-width: 480px) {
   body {
     padding:15px;
   }
@@ -290,22 +290,20 @@ section p {
 }
 
 /* round image*/
-.avatar-img {
+#avatar-img {
   display: block;
   width: 100%;
   border-radius: 50%;
-  margin-bottom: 20px;  
-}
+  margin-bottom: 20px;
 
-.avatar-img-border {
   box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
 /* hide image on mobile screens */
-@media print, screen and (max-width: 960px) {
-  img, .avatar-img {
+@media all and (max-width: 960px) {
+  img, #avatar-img {
     display: none;
   }
   min-height: initial;
@@ -325,4 +323,18 @@ header div.links img {
 header div.links h2 {
   font-weight: lighter;
   margin-left: 4px;
+}
+
+/* Prevent header and footer from overlapping on short screens */
+@media all and (max-height: 875px) and (min-width: 960px) {
+  
+  .more {
+    display: none;
+  }
+}
+
+@media all and (max-height: 615px) {
+  #avatar-img {
+    display: none;
+  }
 }
