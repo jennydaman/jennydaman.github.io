@@ -333,7 +333,7 @@ header div.links h2 {
   }
 }
 
-@media all and (max-height: 760px) {
+@media all and (max-height: 820px) {
   #avatar-img {
     display: none;
   }
