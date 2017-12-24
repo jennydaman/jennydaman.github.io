@@ -196,11 +196,12 @@ footer {
   width:270px;
   float:left;
   position:fixed;
-  bottom:50px;
+  bottom:20px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
-@media all and (max-width: 960px) {
+/* mobile layout */
+@media all and (max-width: 960px), (max-height: 500px) {
 
   div.wrapper {
     width:auto;
@@ -301,17 +302,33 @@ section p {
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
-/* hide image on mobile screens */
+/* move avatar-img on narrow screens */
 @media all and (max-width: 960px) {
-  img, #avatar-img {
-    display: none;
+
+  header {
+    position: relative;
   }
+  #avatar-img {
+    position: absolute;
+    right: 0px;
+    width: 250px;
+  }
+
   min-height: initial;
 }
 
-/*header div.links a:hover {
-  font-weight: bold;
-}*/
+@media all and (max-width: 660px), (min-width: 960px) and (max-height: 800px) {
+  #avatar-img {
+    display: none;
+  }
+}
+
+@media all and (max-height: 875px) and (min-width: 960px) {
+  
+  .more {
+    display: none;
+  }
+}
 
 header div.links img {
   height: 36px;
@@ -323,18 +340,4 @@ header div.links img {
 header div.links h2 {
   font-weight: lighter;
   margin-left: 4px;
-}
-
-/* Prevent header and footer from overlapping on short screens */
-@media all and (max-height: 875px) and (min-width: 960px) {
-  
-  .more {
-    display: none;
-  }
-}
-
-@media all and (max-height: 820px) {
-  #avatar-img {
-    display: none;
-  }
 }
