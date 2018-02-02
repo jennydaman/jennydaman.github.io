@@ -377,7 +377,7 @@
 
 % Others
 \newcommand{\acvSectionTopSkip}{0mm} % was 3mm
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionContentTopSkip}{2mm} % was 2.5mm
 
 
 %-------------------------------------------------------------------------------
@@ -705,7 +705,7 @@
 % My definitions --------------
 % Define an environment for cvskill
 \newenvironment{cvsklist}{%
-  \vspace{-3.0mm} % idk how i feel about this
+  \vspace{-3mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
@@ -715,11 +715,8 @@
   \end{center}
 }
 
-% Define an environment for cvhonor
 \newenvironment{cvdiwrapper}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-3.5mm}
-  \begin{center}
+\begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2cm} L{\textwidth - 4.0cm} R{2.0cm}}
