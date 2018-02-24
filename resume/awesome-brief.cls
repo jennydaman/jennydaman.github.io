@@ -214,7 +214,7 @@
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of honor
-\newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 \newcommand*{\honorpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
@@ -651,75 +651,25 @@
 }
 
 
-%-------------------------------------------------------------------------------
-%                Commands for elements of Cover Letter
-%-------------------------------------------------------------------------------
-% Define an environment for cvletter
-\newenvironment{cvletter}{%
-  \lettertextstyle
-}{%
-}
-
-% Define a section for the cover letter
-% Usage: \lettersection{<section-title>}
-\newcommand{\lettersection}[1]{%
-  \par\addvspace{2.5ex}
-  \phantomsection{}
-  \lettersectionstyle{#1}
-  \color{gray}\vhrulefill{0.9pt}
-  \par\nobreak\addvspace{0.4ex}
-}
-
-% Define a title of the cover letter
-% Usage: \makelettertitle
-\newcommand*{\makelettertitle}{%
-  \vspace{8.4mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \recipienttitlestyle{\@recipientname} & \letterdatestyle{\@letterdate}
-  \end{tabular*}
-  \begin{singlespace}
-    \recipientaddressstyle{\@recipientaddress} \\\\
-  \end{singlespace}
-  \ifthenelse{\isundefined{\@lettertitle}}
-    {}
-    {\lettertitlestyle{\@lettertitle} \\}
-  \lettertextstyle{\@letteropening}
-}
-
-% Define a closing of the cover letter
-% Usage: \makeletterclosing
-\newcommand*{\makeletterclosing}{%
-  \vspace{3.4mm}
-  \lettertextstyle{\@letterclosing} \\\\
-  \letternamestyle{\@firstname\ \@lastname}
-  \ifthenelse{\isundefined{\@letterenclosure}}
-    {\\}
-    {%
-      \\\\\\
-      \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
-    }
-}
-
-% My definitions --------------
+% My definitions --------------------------------------
 % Define an environment for cvskill
 \newenvironment{cvsklist}{%
   \vspace{-3mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
+    \setlength{\parskip}{0pt} %????????????????????
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
 }{%
-    \end{tabular*}
+  \end{tabular*}
   \end{center}
 }
 
-\newenvironment{cvdiwrapper}{%
+\newenvironment{additionaleducation}{%
 \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2cm} L{\textwidth - 4.0cm} R{2.0cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.2cm} L{\textwidth - 4.4cm} R{2.2cm}}
 }{%
     \end{tabular*}
   \end{center}
@@ -731,15 +681,46 @@
   \honordatestyle{#4} & \honorpositionstyle{#1} --- \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
 
-\newcommand*{\cveto}[4]{%
+\newcommand*{\extracirricularentry}[4]{%
 
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
 
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5cm} R{5cm}}
   \entrytitlestyle{#1} \entrydatestyle{--- #2} & \entrydatestyle{#3}\\
   \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#4}}\\
   \end{tabular*}%
 }
+
+\newcommand*{\boringcirricularentry}[3]{%
+
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5cm} R{5cm}}
+  \entrytitlestyle{#1} \entrydatestyle{--- #2} & \entrydatestyle{#3}\\
+  \end{tabular*}%
+}
+
+
+\newcommand*{\subnote}[1]{{\fontsize{11pt}{1em}\bodyfontlight\slshape\color{text} #1}}
+
+
+\newcommand*{\project}[3]{%
+
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth} }
+  \entrytitlestyle{#1} \entrydatestyle{--- \href{https://github.com/#2}{#2}}\\
+  \descriptionstyle{#3}\\
+  \end{tabular*}%
+}
+
+
+
+
 
