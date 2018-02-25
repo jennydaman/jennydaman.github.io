@@ -21,7 +21,7 @@
 %-------------------------------------------------------------------------------
 %                Identification
 %-------------------------------------------------------------------------------
-\ProvidesClass{awesome-cv}[2017/02/05 v1.6.1 Awesome Curriculum Vitae Class]
+\ProvidesClass{awesome-full}[2017/02/05 v1.6.1 Awesome Curriculum Vitae Class]
 \NeedsTeXFormat{LaTeX2e}
 
 
@@ -706,6 +706,7 @@
 
 
 \newcommand*{\subnote}[1]{{\fontsize{11pt}{1em}\bodyfontlight\slshape\color{text} #1}}
+\newcommand*{\coloredhref[2]}{\href{#1}{\color{awesome}#2}}
 
 
 \newcommand*{\project}[3]{%
@@ -714,9 +715,9 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
 
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth} }
-  \entrytitlestyle{#1} \entrydatestyle{--- \href{https://github.com/#2}{#2}}\\
-  \descriptionstyle{#3}\\
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5cm} R{5cm}}
+  \entrytitlestyle{#1} & \entrylocationstyle{\href{https://github.com/#2}{#2}}\\
+  \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}\\
   \end{tabular*}%
 }
 
