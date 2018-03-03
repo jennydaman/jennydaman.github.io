@@ -22,8 +22,9 @@ export default class App extends Component {
           <Resume />
         </div>
         <div id="corner">
+          <span id="tooltip">Email Me</span>
           <Fab ripple={true}><a href="mailto:jenni_zh@protonmail.com">
-            <Fab.Icon>email</Fab.Icon>
+            <img src="/assets/ic_email_white_24px.svg" />
           </a></Fab>
         </div>
       </div>
