@@ -19,25 +19,6 @@ body {
   padding: 1rem;
 }
 
-@media only screen and (min-width: 37.56rem) {
-  #app {
-    width: 85%;
-    padding: 1.5rem;
-  }
-}
-
-@media only screen and (min-width: 73.5rem) {
-  #app {
-    width: 69.5rem;
-    padding: 2rem;
-    grid-template-columns: 14.5rem 51rem;
-    grid-column-gap: 4rem;
-  }
-  #app > * {
-    border: none;
-  }
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -70,6 +51,7 @@ a:hover {
 }
 
 #tooltip {
+  display: none;
   position: relative;
   right: -2rem;
   width: 5rem;
@@ -122,4 +104,27 @@ a:hover {
 
 .mdc-tab {
   font-family: inherit;
+}
+
+
+@media only screen and (min-width: 37.56rem) {
+  #app {
+    width: 85%;
+    padding: 1.5rem;
+  }
+  #tooltip {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 73.5rem) {
+  #app {
+    width: 69.5rem;
+    padding: 2rem;
+    grid-template-columns: 14.5rem 51rem;
+    grid-column-gap: 4rem;
+  }
+  #app > * {
+    border: none;
+  }
 }
