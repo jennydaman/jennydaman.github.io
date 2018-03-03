@@ -1,10 +1,7 @@
 import style from './style.css'
-
 import { h, Component } from 'preact';
-import { Router } from 'preact-router';
-
 import Side from './components/side';
-
+import Resume from './components/resume';
 if (module.hot) {
   require('preact/debug');
 }
@@ -23,7 +20,7 @@ export default class App extends Component {
     return (
       <div id="app">
         <Side />
-        <div id="rest"><h1>hello</h1></div>
+        <Resume />
       </div>
     );
   }

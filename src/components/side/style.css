@@ -25,6 +25,7 @@ header {
 @media only screen and (min-width: 85.625rem) {
   header {
     grid-template-columns: 100%;
+    grid-template-rows: 14.5rem;
     grid-template-areas:
     "avatar"
     "title"
