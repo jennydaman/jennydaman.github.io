@@ -22,7 +22,7 @@ header {
   }
 }
 
-@media only screen and (min-width: 85.625rem) {
+@media only screen and (min-width: 73.5rem) {
   header {
     grid-template-columns: 100%;
     grid-template-rows: 14.5rem;
