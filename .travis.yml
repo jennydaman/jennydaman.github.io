@@ -11,8 +11,8 @@ branches:
 
 cache:
   yarn: true
-    directories:
-      - "node_modules"
+  directories:
+    - "node_modules"
 
 deploy:
   provider: pages
