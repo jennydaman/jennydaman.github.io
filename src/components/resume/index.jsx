@@ -17,6 +17,11 @@ class Tab extends Component {
 }
 
 const Pdf = props => {
+
+  // https://github.com/developit/preact-cli/issues/518
+  if (!props.fname)
+    return (<main></main>);
+
   let resPath = '/assets/resume/' + props.fname;
   return (
     <main>
@@ -53,7 +58,7 @@ export default class Resume extends Component {
 
         <p>Last updated 01 March 2018</p>
         <div class={style.divider}></div>
-        {state.fname ? <Pdf fname={state.fname}/> : ''}
+        <Pdf fname={state.fname}/>
       </div>
     )
   }
