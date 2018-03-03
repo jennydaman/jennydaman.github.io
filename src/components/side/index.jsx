@@ -33,6 +33,7 @@ export default class Side extends Component {
             <span>Mind Matter
             <br />Chrome Extension</span>
           </a>
+          <p><br /><a href="https://preactjs.com">Built with <em>Preact</em>{" \ud83d\ude80"}</a></p>
         </section>
       </header>
     )
