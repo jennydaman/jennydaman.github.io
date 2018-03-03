@@ -8,13 +8,13 @@ header {
   margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 37rem) {
+@media only screen and (max-width: 37.56rem) {
   .avatar {
     display: none;
   }
 }
 
-@media only screen and (min-width: 37rem) {
+@media only screen and (min-width: 37.56rem) {
   .avatar {
     display: block;
   }
