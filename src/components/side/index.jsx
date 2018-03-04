@@ -33,6 +33,14 @@ export default class Side extends Component {
             <span>Mind Matter
             <br />Chrome Extension</span>
           </a>
+
+          <a class={style.link} href="/assets/jzhang_public.key" download="jzhang_public.key"
+            title="Tell me a secret!">
+            <img src="/assets/ic_lock_36px.svg" />
+            PGP public key
+          </a>
+
+
           <p><br /><a href="https://preactjs.com">Built with <em>Preact</em>{" \ud83d\ude80"}</a></p>
         </section>
       </header>
