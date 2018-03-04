@@ -1,0 +1,58 @@
+.email {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.tooltip {
+  z-index: -1;
+  display: none;
+  position: relative;
+  right: -2rem;
+  width: 5rem;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: .375rem;
+  padding: 0.3125rem 0;
+
+  opacity: 0.5;
+  will-change: opacity, right;
+  animation-name: hide;
+  animation-duration: 0.25s;
+}
+
+.fab:hover + .tooltip,
+.tooltip:hover {
+  animation-name: peakaboo;
+  animation-fill-mode: forwards;
+  color: #fff
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    right: 0.5rem;
+  }
+  to {
+    opacity: 0.5;
+    right: -2rem;
+  }
+}
+
+@keyframes peakaboo {
+  from {
+    opacity: 0.5;
+    right: -2rem;
+  }
+  to {
+    opacity: 1;
+    right: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 37.56rem) {
+  .tooltip {
+    display: block;
+  }
+}
