@@ -19,8 +19,14 @@ class Tab extends Component {
 const Pdf = props => {
 
   // https://github.com/developit/preact-cli/issues/518
+  // god bless prerender
   if (!props.fname)
-    return (<main></main>);
+    return (
+      <noscript>
+        <p><a href="/assets/resume/jzhang_resume.pdf">Direct link to jzhang_resume.pdf</a></p>
+        <embed src="/assets/resume/jzhang_resume.pdf" type="application/pdf" height="600" width="100%" />
+      </noscript>
+    );
 
   let resPath = '/assets/resume/' + props.fname;
   return (
@@ -58,7 +64,7 @@ export default class Resume extends Component {
 
         <p>Last updated 04 March 2018</p>
         <div class={style.divider}></div>
-        <Pdf fname={state.fname}/>
+        <Pdf fname={state.fname} />
       </div>
     )
   }
