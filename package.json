@@ -13,7 +13,10 @@
   "eslintConfig": {
     "extends": "eslint-config-synacor",
     "rules": {
-      "indent": ["error", 2]
+      "indent": [
+        "error",
+        2
+      ]
     }
   },
   "eslintIgnore": [

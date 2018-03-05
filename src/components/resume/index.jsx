@@ -16,11 +16,11 @@ class Tab extends Component {
   }
 }
 
-const Pdf = props => {
+const Pdf = ({ fname }) => {
 
   // https://github.com/developit/preact-cli/issues/518
   // god bless prerender
-  if (!props.fname)
+  if (!fname)
     return (
       <noscript>
         <p><a href="/assets/resume/jzhang_resume.pdf">Direct link to jzhang_resume.pdf</a></p>
@@ -28,10 +28,10 @@ const Pdf = props => {
       </noscript>
     );
 
-  let resPath = '/assets/resume/' + props.fname;
+  let resPath = '/assets/resume/' + fname;
   return (
     <main>
-      <p><a href={resPath}>Direct link to {props.fname}</a></p>
+      <p><a href={resPath}>Direct link to {fname}</a></p>
       <embed src={resPath} type="application/pdf" height="600" width="100%" />
     </main>
   )
@@ -40,8 +40,15 @@ const Pdf = props => {
 
 export default class Resume extends Component {
 
+  // linkedState doesn't work with mdc tab 
   changeFile = fname => {
     this.setState({ fname: fname });
+    // HACK change tab accent color 
+    if (fname === 'jzhang_brief.pdf')
+      document.documentElement.style.setProperty('--mdc-theme-text-primary-on-light', '#27AE60');
+    else
+      document.documentElement.style.setProperty('--mdc-theme-text-primary-on-light', '#5376E0');
+
   }
 
   componentDidMount() {
