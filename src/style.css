@@ -8,8 +8,8 @@ body {
   color: #595959;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --mdc-theme-primary: #5376E0;
-  --mdc-theme-secondary: #364E96;
+  --mdc-theme-primary: #364E96;
+  --mdc-theme-secondary: #1F75FE;
 }
 
 #app {
@@ -48,9 +48,12 @@ a:hover {
   right: 1rem;
 }
 
-
-.mdc-tab {
+.mdc.tab {
   font-family: inherit;
+  font-weight: 500;
+}
+.mdc-fab {
+  background-color: var(--mdc-theme-primary);
 }
 
 @media only screen and (min-width: 37.56rem) {
