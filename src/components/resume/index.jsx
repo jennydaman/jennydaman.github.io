@@ -69,7 +69,7 @@ export default class Resume extends Component {
           </div>
         </div>
 
-        <p>Last updated 10 March 2018</p>
+        <p>Last updated 30 March 2018</p>
         <div class={style.divider}></div>
         <Pdf fname={state.fname} />
       </div>

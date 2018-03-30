@@ -6,7 +6,7 @@
   "scripts": {
     "resume": "rm src/assets/resume/* && make -j2 --directory resume && mv resume/build/*.pdf src/assets/resume && make --directory resume clean",
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "yarn run resume && preact build --service-worker false",
+    "build": "preact build --service-worker false",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src"
