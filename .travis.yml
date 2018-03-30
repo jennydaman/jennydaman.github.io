@@ -14,8 +14,6 @@ cache:
   directories:
     - "node_modules"
 
-
-before_install: sudo apt-get -qq update && sudo apt-get install -y texlive-full
 script: yarn run build
 
 deploy:
@@ -28,4 +26,4 @@ deploy:
     branch: exp
   target-branch: master
 
-sudo: true
+sudo: false
