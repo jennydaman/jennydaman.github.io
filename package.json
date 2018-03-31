@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "resume": "rm src/assets/resume/* && make -j2 --directory resume && mv resume/build/*.pdf src/assets/resume && make --directory resume clean",
+    "resume": "rm src/assets/resume/*; make -j2 --directory resume && mv resume/build/*.pdf src/assets/resume && make --directory resume clean",
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build --service-worker false",
     "serve": "preact build && preact serve",
