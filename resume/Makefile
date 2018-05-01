@@ -11,10 +11,10 @@ before:
 	mkdir -p $(BUILD_DIR)
 
 full: full.tex $(SHARED_SRC) $(shell find full -name "*.tex") before
-	$(CC) -interaction nonstopmode -output-directory=$(BUILD_DIR) $<
+	$(CC) -interaction nonstopmode -output-directory=$(BUILD_DIR) $< ; echo "let's pretend that went well"
 
 brief: brief.tex $(SHARED_SRC) $(shell find brief -name "*.tex") before
-	$(CC) -interaction nonstopmode -output-directory=$(BUILD_DIR) $<
+	$(CC) -interaction nonstopmode -output-directory=$(BUILD_DIR) $< ; echo "what are font errors?"
 
 clean:
 	$(RM) -r $(BUILD_DIR)
