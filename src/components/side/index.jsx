@@ -4,8 +4,8 @@ import style from './style.css'
 export default class Side extends Component {
   render() {
     return (
+      <aside>
       <header>
-
         <section class={style.title}>
           <h1>Jennings Zhang</h1>
           jennydaman.github.io | DFTBA
@@ -44,6 +44,7 @@ export default class Side extends Component {
           <p><br /><a href="https://preactjs.com">Built with <em>Preact</em>{" \ud83d\ude80"}</a></p>
         </section>
       </header>
+      </aside>
     )
   }
 }

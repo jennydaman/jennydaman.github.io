@@ -3,7 +3,7 @@ git:
 
 language: node_js
 node_js:
-  - "9" # upath@1.0.4 node engine compatability
+  - "node" # upath@1.0.4 node engine compatability
 
 branches:
   only:
